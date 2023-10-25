@@ -32,7 +32,10 @@ public class HotelServiceImpl implements HotelService {
 		Hotel dbHotel = hotelRepository.findById(hotelId).orElseThrow(
 				()-> new HotelNotFoundException("Hotel","id",hotelId)
 				);
-		BeanUtils.copyProperties(hotelDto, dbHotel);
+		//BeanUtils.copyProperties(hotelDto, dbHotel);
+		dbHotel.setHotelName(hotelDto.getHotelName());
+		dbHotel.setLocation(hotelDto.getLocation());
+		dbHotel.setAbout(hotelDto.getAbout());
 		Hotel updatedHotel = hotelRepository.save(dbHotel);
 		return entityToDto(updatedHotel);
 	}

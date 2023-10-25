@@ -28,16 +28,11 @@ public class HotelController {
 	public ResponseEntity<HotelDto> createHotel(@RequestBody HotelDto hotelDto){
 		return new ResponseEntity<HotelDto>(hotelService.createHotel(hotelDto), HttpStatus.CREATED);
 	}
-	
-	/*
-	 * @PutMapping("/{hotelId}") public ResponseEntity<HotelDto>
-	 * updateHotel(@RequestBody HotelDto hotelDto,
-	 * 
-	 * @PathVariable String hotelId){ return new
-	 * ResponseEntity<HotelDto>(hotelService.updateHotel(hotelDto, hotelId),
-	 * HttpStatus.OK); }
-	 */
-	
+
+	@PutMapping("/hotels/{hotelId}")
+	public ResponseEntity<HotelDto> updateHotel(@RequestBody HotelDto hotelDto, @PathVariable String hotelId){
+		return new ResponseEntity<HotelDto>(hotelService.updateHotel(hotelDto, hotelId), HttpStatus.OK);
+	}
 	@GetMapping("/hotels/{hotelId}")
 	public ResponseEntity<HotelDto> getHotelById(@PathVariable String hotelId){
 		return new ResponseEntity<HotelDto>(hotelService.getHotelById(hotelId), HttpStatus.OK);
