@@ -4,6 +4,6 @@ rating service -> port: 8083
 
 
 hotel api gateway -> server.port=8084
-get : http://localhost:8084/api/hotels
+get call : http://localhost:8084/api/hotels
 
 hotel eureka server -> port: 8761
