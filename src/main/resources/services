@@ -10,3 +10,5 @@ hotel eureka server -> port: 8761
 
 
 hotel config server -> port : 8085
+
+hotel service is client to the config server
