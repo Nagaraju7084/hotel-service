@@ -7,3 +7,6 @@ hotel api gateway -> server.port=8084
 get call : http://localhost:8084/api/hotels
 
 hotel eureka server -> port: 8761
+
+
+hotel config server -> port : 8085
